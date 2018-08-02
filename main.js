@@ -1,3 +1,6 @@
+import * as d3 from 'd3';
+import './main.css';
+
 'use strict';
 
 var graph = {
