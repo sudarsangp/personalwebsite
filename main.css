@@ -1,0 +1,269 @@
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/open-sans-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+  font-family: 'Open Sans';
+  margin: 0;
+}
+
+header {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+header .name {
+  font-size: x-large;
+  line-height: 2;
+}
+
+header .name span {
+  white-space: nowrap;
+}
+
+header .intro {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+header .profile-picture {
+  align-self: center;
+}
+
+.online-profile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.online-profile > a {
+  display: inline-block;
+  margin: 1em;
+}
+
+.logo {
+  height: 55px;
+  width: 55px;
+}
+
+.logo.linkedin {
+  background: url("media/linkedin-logo.png") no-repeat;
+}
+
+.logo.twitter {
+  background: url("media/twitter-logo.png") no-repeat;
+}
+
+.logo.quora {
+  background: url("media/quora-logo.png") no-repeat;
+}
+
+.logo.medium {
+  background: url("media/medium-logo.png") no-repeat;
+}
+
+.logo.github {
+  background: url("media/github-logo.png") no-repeat;
+}
+
+.logo.stackoverflow {
+  background: url("media/stackoverflow-logo.png") no-repeat;
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  height: auto;
+  width: 100%;
+}
+
+.flip-container {
+  display: inline-block;
+  cursor: pointer;
+  height: 155px;
+  position: relative;
+  perspective: 600px;
+  width: 155px;
+}
+
+.flip-container .flip-data {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  animation: rotate 4s ease-in-out 2s 2;
+}
+
+.flip-container .flip-data:hover {
+  transform: rotateY(180deg);
+}
+
+.flip-container .flip-data .side {
+  backface-visibility: hidden;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+
+.flip-container .flip-data .back {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotate {
+  25% {
+    transform: rotateY(180deg);
+  }
+  50% {
+    transform: rotateY(0deg);
+  }
+}
+
+a {
+  color: #FF4081;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #3F51B5;
+}
+
+.content-container {
+  padding: 1em;
+}
+
+div.summary {
+  background-color: #3F51B5;
+  color: #FFFFFF;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+div.summary a {
+  color: #FF80AB;
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.nodes text {
+  pointer-events: none;
+  font: 10px sans-serif;
+}
+
+.side-project-tech {
+  text-align: left;
+}
+
+.side-project-meta {
+  display: block;
+}
+
+.side-project-meta ul {
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.side-project-meta ul > li {
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+.skill-graph img {
+  display: block;
+  margin: 0 auto;
+  width: 90vmin;
+}
+
+.skill-graph svg {
+  display: none;
+}
+
+.not-small-screen {
+  display: none;
+}
+
+.profile {
+  text-align: left;
+}
+
+.profile .details {
+  display: inline-block;
+  text-align: left;
+}
+
+.project-details {
+  text-align: left;
+}
+
+.project-details iframe {
+  max-width: 90vmin;
+}
+
+.project-details img {
+  max-width: 90vmin;
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    align-items: center;
+  }
+
+  .side-project-tech {
+    text-align: center;
+  }
+
+  .skill-graph {
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .skill-graph img {
+    display: none;
+  }
+
+  .skill-graph svg {
+    display: block;
+  }
+
+  .not-small-screen {
+    display: inline;
+  }
+
+  .profile {
+    text-align: center;
+  }
+
+  .project-details {
+    text-align: center;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+}
