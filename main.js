@@ -5,6 +5,7 @@ import './main.css';
 
 var graph = {
   "nodes": [
+    {"id": "Day at Work", "group": 1, "size": 3},
     {"id": "Grocery Inventory", "group": 1, "size": 3},
     {"id": "Grocery Deals", "group": 1, "size": 2},
     {"id": "Developer Hireable", "group": 1, "size": 1},
@@ -15,15 +16,19 @@ var graph = {
     {"id": "Android", "group": 2, "size": 3},
     {"id": "Tensorflow", "group": 2, "size": 1},
     {"id": "Google Cloud", "group": 2, "size": 2},
-    {"id": "Firebase", "group": 2, "size": 2}
+    {"id": "Firebase", "group": 2, "size": 2},
+    {"id": "React", "group": 2, "size": 1}
   ],
   "links": [
+    {"source": "HTML", "target": "Day at Work", "value": 16},
     {"source": "HTML", "target": "Grocery Deals", "value": 16},
     {"source": "HTML", "target": "Developer Hireable", "value": 9},
     {"source": "HTML", "target": "Blinkr Extension", "value": 4},
+    {"source": "CSS", "target": "Day at Work", "value": 16},
     {"source": "CSS", "target": "Grocery Deals", "value": 16},
     {"source": "CSS", "target": "Developer Hireable", "value": 9},
     {"source": "CSS", "target": "Blinkr Extension", "value": 4},
+    {"source": "Javascript", "target": "Day at Work", "value": 16},
     {"source": "Javascript", "target": "Grocery Deals", "value": 16},
     {"source": "Javascript", "target": "Developer Hireable", "value": 9},
     {"source": "Javascript", "target": "Blinkr Extension", "value": 4},
@@ -32,7 +37,8 @@ var graph = {
     {"source": "Google Cloud", "target": "Grocery Inventory", "value": 4},
     {"source": "Firebase", "target": "Grocery Deals", "value": 9},
     {"source": "Firebase", "target": "Developer Hireable", "value": 4},
-    {"source": "Grocery Inventory", "target": "Grocery Deals", "value": 16}
+    {"source": "Grocery Inventory", "target": "Grocery Deals", "value": 16},
+    {"source": "React", "target": "Day at Work", "value": 16}
   ]
 };
 

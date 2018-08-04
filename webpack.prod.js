@@ -27,20 +27,20 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css/,
+        test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader'
         ]    
       },
       {
-        test: /\.(png|jpeg)/,
+        test: /\.(png|jpeg)$/,
         use: [
           'file-loader'
         ]
       },
       {
-        test: /\.(woff|woff2)/,
+        test: /\.(woff|woff2)$/,
         use: [
           'file-loader'
         ]
