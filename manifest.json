@@ -1,0 +1,17 @@
+{
+  "name": "Sudarsan GP Website",
+  "short_name": "GPS",
+  "description": "Sudarsan Padmanabhan Personal Website",
+  "display": "standalone",
+  "background_color": "#3F51B5",
+  "theme_color": "blue",
+  "icons": [{
+    "src": "media/profile-picture-512.jpeg",
+    "sizes": "512x512",
+    "type": "image/png"
+  }, {
+    "src": "media/profile-picture-192.jpeg",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}

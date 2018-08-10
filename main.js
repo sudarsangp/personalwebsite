@@ -3,6 +3,16 @@ import './main.css';
 
 'use strict';
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('SW registered:', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed', registrationError)
+    });
+  });
+}
+
 var graph = {
   "nodes": [
     {"id": "Day at Work", "group": 1, "size": 3},
