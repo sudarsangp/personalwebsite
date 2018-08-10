@@ -128,13 +128,11 @@ header .profile-picture {
 }
 
 a {
-  color: #FF4081;
+  color: #B3003A;
 }
 
 a:hover {
   cursor: pointer;
-  text-decoration: none;
-  color: #3F51B5;
 }
 
 .content-container {
@@ -148,8 +146,8 @@ div.summary {
   padding: 1em;
 }
 
-div.summary a {
-  color: #FF80AB;
+div.summary .email {
+  color: white;
 }
 
 .links line {
