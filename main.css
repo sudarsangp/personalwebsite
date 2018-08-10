@@ -1,5 +1,6 @@
 /* open-sans-regular - latin */
 @font-face {
+  font-display: auto;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -9,7 +10,7 @@
 }
 
 body {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
