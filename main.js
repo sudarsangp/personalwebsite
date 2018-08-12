@@ -1,5 +1,7 @@
-import * as d3 from 'd3';
 import './main.css';
+import {select, event} from 'd3-selection';
+import {forceSimulation, forceLink, forceManyBody, forceCenter} from 'd3-force';
+import {drag} from 'd3-drag';
 
 'use strict';
 
@@ -52,14 +54,14 @@ var graph = {
   ]
 };
 
-var svg = d3.select("svg"),
+var svg = select("svg"),
   width = +svg.attr("width"),
   height = +svg.attr("height");
 
-var simulation = d3.forceSimulation()
-  .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(function() { return 50;}))
-  .force("charge", d3.forceManyBody().strength(function() {return -200;}))
-  .force("center", d3.forceCenter(width / 2, height / 2));
+var simulation = forceSimulation()
+  .force("link", forceLink().id(function(d) { return d.id; }).distance(function() { return 50;}))
+  .force("charge", forceManyBody().strength(function() {return -200;}))
+  .force("center", forceCenter(width / 2, height / 2));
 
 var link = svg.append("g")
   .attr("class", "links")
@@ -75,7 +77,7 @@ var gdata = svg.append("g").attr("class", "nodes").selectAll("g")
 var node =  gdata.append("circle")
   .attr("r", function(d) {return d.size * 5;})
   .attr("fill", function(d) { return d.group === 1 ? '#3F51B5' : '#FF80AB'; })
-  .call(d3.drag()
+  .call(drag()
     .on("start", dragstarted)
     .on("drag", dragged)
     .on("end", dragended));
@@ -104,18 +106,18 @@ var node =  gdata.append("circle")
   }
 
 function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  if (!event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x;
   d.fy = d.y;
 }
 
 function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
+  d.fx = event.x;
+  d.fy = event.y;
 }
 
 function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
+  if (!event.active) simulation.alphaTarget(0);
   d.fx = null;
   d.fy = null;
 }
