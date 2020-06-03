@@ -121,3 +121,14 @@ function dragended(d) {
   d.fx = null;
   d.fy = null;
 }
+
+window.addEventListener('load', () => {
+  const customEmbedEl = document.querySelector('.custom-embed');
+  customEmbedEl.setAttribute('src', customEmbedEl.getAttribute('data-src'));
+
+  const youtubeEmbeds = document.querySelectorAll('.youtube-embed');
+  for (let i=0; i<youtubeEmbeds.length; i++) {
+    const youtubeEl = youtubeEmbeds[i];
+    youtubeEl.setAttribute('src', youtubeEl.getAttribute('data-src'));
+  }
+});
